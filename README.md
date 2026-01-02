@@ -71,7 +71,7 @@ Run the script passing the configuration file:
 
 ```bash
 python 03_classify_pseudo_corine.py --config 03_config_classify.json
-
+```
 
 ## 4. Transition Analysis & QC (Python)
 
