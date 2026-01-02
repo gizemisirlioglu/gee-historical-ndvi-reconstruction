@@ -32,7 +32,7 @@ It uses a **Percentile Mapping** approach:
 3. Clamps values to the valid NDVI range $[-1, 1]$.
 
 ### Configuration
-All settings are managed via the `config_harmonize.json` file.
+All settings are managed via the `02_config_harmonize.json` file.
 
 1. Open `config_harmonize.json`.
 2. Update `project_id` and `aoi_asset` to match your GEE environment.
@@ -42,3 +42,27 @@ All settings are managed via the `config_harmonize.json` file.
 1. Ensure you have the Google Earth Engine Python API installed:
    ```bash
    pip install earthengine-api
+   
+## 3. Pseudo-CORINE Classification (Python)
+
+The core script `03_classify_pseudo_corine.py` generates the historical land cover maps for 1975, 1980, and 1985. It employs a **Back-casting** strategy, where a model trained on the stable 1990 CORINE baseline is applied to the harmonized historical imagery.
+
+### Methodology
+1. **Feature Engineering:** Constructs a predictor stack using harmonized NDVI, Z-scores (relative to 1990), Topographic variables (SRTM Elevation & Slope), and Spatial coordinates (Lat/Lon).
+2. **Random Forest Classification:** Trains a classifier using the 1990 Official CORINE dataset as ground truth.
+3. **Temporal Fusion:** Integrates the Random Forest probabilities with a weighted **Temporal Prior** (derived from 1990–2018 trends). This step stabilizes the classification in spectrally ambiguous areas.
+4. **Post-Processing:** Applies spatial smoothing and connectivity checks to enforce a Minimum Mapping Unit (MMU) consistent with CORINE standards (~9 pixels).
+
+### Configuration
+All settings are managed via the `config_classify.json` file.
+
+1. Open `config_classify.json`.
+2. Update `project_id` and `aoi_asset` to match your GEE environment.
+3. Ensure the `ndvi_assets` paths point to the **harmonized** outputs generated in Step 2.
+4. (Optional) You can tune parameters such as `rf_trees` (default: 300) or `prior_alpha` (fusion weight) in the `parameters` section.
+
+### Usage
+Run the script passing the configuration file:
+
+```bash
+python 03_classify_pseudo_corine.py --config 03_config_classify.json
