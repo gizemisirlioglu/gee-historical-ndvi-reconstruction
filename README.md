@@ -71,3 +71,16 @@ Run the script passing the configuration file:
 
 ```bash
 python 03_classify_pseudo_corine.py --config 03_config_classify.json
+
+## 4. Transition Analysis & QC (Python)
+
+This script calculates the land cover transitions between pairs of years (e.g., 1975-1990) and exports the raw statistics to CSV format. It also performs a quick Quality Control (QC) check to flag improbable changes (e.g., Wetland -> Urban).
+
+### Configuration
+Edit `04_config_transitions.json`:
+* Define the `pairs` of years you want to analyze (e.g., `[1975, 1990]`).
+* Update the `assets` dictionary with paths to your pseudo-CORINE and official CORINE maps.
+
+### Usage
+```bash
+python 04_export_transition_stats.py --04_config config_transitions.json
