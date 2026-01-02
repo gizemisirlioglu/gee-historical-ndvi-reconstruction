@@ -1,0 +1,25 @@
+{
+  "project_id": "doktora-tezi-471512",
+  "aoi_asset": "projects/doktora-tezi-471512/assets/studyarea",
+  "export_folder": "GEE_NDVI_HARMONIZED",
+  
+  "assets": {
+    "reference": {
+      "year": 1985,
+      "path": "projects/doktora-tezi-471512/assets/NDVI_1985",
+      "scale": 120
+    },
+    "targets": [
+      {
+        "year": 1975,
+        "path": "projects/doktora-tezi-471512/assets/NDVI_1975_fixed_p2p98_-1to1",
+        "scale": 180
+      },
+      {
+        "year": 1980,
+        "path": "projects/doktora-tezi-471512/assets/NDVI_1980_fixed_p2p98_-1to1",
+        "scale": 180
+      }
+    ]
+  }
+}
