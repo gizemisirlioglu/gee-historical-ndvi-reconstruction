@@ -21,6 +21,11 @@ It focuses on generating "Greenest Pixel" composites (using `qualityMosaic`) for
      outputAssetFolder: 'users/YOUR_USERNAME/results_folder',
      // ...
    };
+   
+### Configuration
+Unlike the Python scripts, configuration for this step is **embedded directly in the script**.
+1. Open `01_generate_historical_ndvi.js`.
+2. Edit the `CONFIG` object at the top of the file.
 ## 2. Radiometric Harmonization (Python)
 
 After generating the raw composites in Step 1, the `02_harmonize_ndvi_time_series.py` script harmonizes the older Landsat MSS data (1975, 1980) to match the radiometric distribution of the Landsat TM reference year (1985).
