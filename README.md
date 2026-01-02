@@ -31,6 +31,13 @@ It uses a **Percentile Mapping** approach:
 2. Rescales the target images (1975, 1980) so that their $P_{2}$ and $P_{98}$ match the reference year.
 3. Clamps values to the valid NDVI range $[-1, 1]$.
 
+### Configuration
+All settings are managed via the `config_harmonize.json` file.
+
+1. Open `config_harmonize.json`.
+2. Update `project_id` and `aoi_asset` to match your GEE environment.
+3. Define your input paths in the `assets` section (Reference year vs Target years).
+
 ### Usage
 1. Ensure you have the Google Earth Engine Python API installed:
    ```bash
