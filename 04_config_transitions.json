@@ -1,0 +1,30 @@
+{
+  "project_id": "doktora-tezi-471512",
+  "aoi_asset": "projects/doktora-tezi-471512/assets/studyarea",
+  "export_folder": "GEE_TRANSITION_STATS",
+  
+  "scale": 180,
+  "n_classes": 7,
+
+  "assets": {
+    "1975": "projects/doktora-tezi-471512/assets/pseudo_CORINE_1975",
+    "1980": "projects/doktora-tezi-471512/assets/pseudo_CORINE_1980",
+    "1985": "projects/doktora-tezi-471512/assets/pseudo_CORINE_1985",
+    "1990": "projects/doktora-tezi-471512/assets/CORINE_1990",
+    "2000": "projects/doktora-tezi-471512/assets/CORINE_2000",
+    "2006": "projects/doktora-tezi-471512/assets/CORINE_2006",
+    "2012": "projects/doktora-tezi-471512/assets/CORINE_2012",
+    "2018": "projects/doktora-tezi-471512/assets/CORINE_2018"
+  },
+
+  "pairs": [
+    [1975, 1980],
+    [1980, 1985],
+    [1985, 1990],
+    [1975, 1990],
+    [1990, 2000],
+    [2000, 2006],
+    [2006, 2012],
+    [2012, 2018]
+  ]
+}
