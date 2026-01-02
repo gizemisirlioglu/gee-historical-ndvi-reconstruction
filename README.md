@@ -1,6 +1,6 @@
 # gee-historical-ndvi-reconstruction
 
-#  1. Historical Landsat NDVI Composite Generator (GEE)
+##  1. Historical Landsat NDVI Composite Generator (GEE)
 
 This repository contains a Google Earth Engine (JavaScript) script designed to reconstruct historical Normalized Difference Vegetation Index (NDVI) time-series data using **Landsat MSS (1-3)** and **Landsat TM (5)** sensors.
 
