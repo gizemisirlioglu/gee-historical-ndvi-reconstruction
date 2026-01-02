@@ -34,7 +34,7 @@ It uses a **Percentile Mapping** approach:
 ### Configuration
 All settings are managed via the `02_config_harmonize.json` file.
 
-1. Open `config_harmonize.json`.
+1. Open `02_config_harmonize.json`.
 2. Update `project_id` and `aoi_asset` to match your GEE environment.
 3. Define your input paths in the `assets` section (Reference year vs Target years).
 
@@ -56,7 +56,7 @@ The core script `03_classify_pseudo_corine.py` generates the historical land cov
 ### Configuration
 All settings are managed via the `config_classify.json` file.
 
-1. Open `config_classify.json`.
+1. Open `03_config_classify.json`.
 2. Update `project_id` and `aoi_asset` to match your GEE environment.
 3. Ensure the `ndvi_assets` paths point to the **harmonized** outputs generated in Step 2.
 4. (Optional) You can tune parameters such as `rf_trees` (default: 300) or `prior_alpha` (fusion weight) in the `parameters` section.
